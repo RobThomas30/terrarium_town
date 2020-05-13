@@ -1,0 +1,16 @@
+<%= render 'shared/nav' %> 
+
+<h1>Index</h1>
+
+<% @listings.each do |listing| %>
+  <p><%= listing.title %></p>
+  <p><%= listing.price %></p>
+  <p><%= listing.description %></p>
+  <p><%= listing.sale_type %></p>
+  <p><%= listing.size %></p>
+  <img src=<%= listing.image %>>
+  <%= image_tag listing.picture if listing.picture.attached?%>
+  <p><%= listing.user.email %></p>
+  <p><%= link_to "Show", listing_path(listing) %></p>
+  <br>
+<% end %>
