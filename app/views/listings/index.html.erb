@@ -1,16 +1,33 @@
 <%= render 'shared/nav' %> 
 
 <h1>Index</h1>
-
-<% @listings.each do |listing| %>
-  <p><%= listing.title %></p>
-  <p><%= listing.price %></p>
-  <p><%= listing.description %></p>
-  <p><%= listing.sale_type %></p>
-  <p><%= listing.size %></p>
-  <img src=<%= listing.image %>>
-  <%= image_tag listing.picture if listing.picture.attached?%>
-  <p><%= listing.user.email %></p>
-  <p><%= link_to "Show", listing_path(listing) %></p>
-  <br>
-<% end %>
+<div class='listing'>
+  <% @listings.each do |listing| %>
+  <div class='listing-title'>
+    <p><%= listing.title %></p>
+  </div>
+  <div class='sale'>
+    <% if listing.sale_type.to_i == 1 %>
+      <p>$<%= listing.price %></p>
+    <% elsif listing.sale_type.to_i == 2 || 3 %>
+      <p><%= number_to_sale_type(listing.sale_type) %></p>
+    <% end %>
+  </div>
+  <div class='listing-description'>
+    <p><%= listing.description %></p>
+  </div>
+  <div class='listing-size'>
+    <p><%= number_to_size(listing.size) %></p>
+  </div>
+  <div class='listing-image'>
+    <img src=<%= listing.image %>>
+    <%= image_tag listing.picture if listing.picture.attached?%>
+  </div>
+  <div class='listing-user'>
+    <p><%= listing.user.email %></p>
+  </div>
+  <div class='show-button'>
+    <p><%= link_to "Show", listing_path(listing) %></p>
+  </div>
+  <% end %>
+</div>
