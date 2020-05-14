@@ -1,0 +1,44 @@
+// Place all the styles related to the listings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.container{
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+
+}
+
+.listing{
+  // display: flex;
+  // flex-wrap: wrap;
+  // height: 25vh;
+  // width: 50%;
+  .listing-title{
+
+  }
+  .sale{
+
+  }
+  .listing-description{
+
+  }
+  .listing-size{
+
+  }
+  .listing-image{
+    img{
+      height: 300px;
+      width: 300px;
+      object-fit: cover;
+    }
+  }
+  .listing-user{
+
+  }
+  .show-button{
+
+  }
+}
+
