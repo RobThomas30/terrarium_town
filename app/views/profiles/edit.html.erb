@@ -1,0 +1,20 @@
+<%= render 'shared/nav' %> 
+
+<h1>Edit your profile </h1>
+
+<%= form_with scope: @user, url: profile_path, local: true, method: "patch" do |form| %>
+  
+  <div>
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+  <div>
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>  
+
+<% end %>

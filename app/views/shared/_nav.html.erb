@@ -8,5 +8,9 @@
         <%= link_to "Sign in", new_user_session_path %>
     <% end %>
 
-    <%= link_to "Profile", profile_path(id: current_user.id) %>
+    <% if user_signed_in? %>
+        <%= link_to "Profile", profile_path(id: current_user.id) %>
+    <% else %>
+         <%= link_to "Profile", new_user_session_path %> 
+    <% end %>
 </nav>
