@@ -10,7 +10,7 @@ class User < ApplicationRecord
   
   private
     def create_profile
-      Profile.create(user: self)
+      Profile.create(user: self, username: "#{Faker::Books::Lovecraft.word.capitalize + Faker::Space.galaxy}")
       puts "created user profile"
     end
 end

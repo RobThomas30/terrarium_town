@@ -11,20 +11,13 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    current_user.profile.update(
-      username: [:user][:username],
-      location: [:user][:location]
-    )
+    current_user.profile.update(profile_params)
     redirect_to profile_path
-  end
-
-  def destroy
-
   end
 
   private
 
-  # def profile_params
-  #   params.permit(:user, :username, :email, :location)
-  # end
+  def profile_params
+    params.require(:user).permit(:username, :location)
+  end
 end
