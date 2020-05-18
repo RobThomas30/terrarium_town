@@ -1,0 +1,24 @@
+
+.show-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  
+  .col-1{
+
+    .show-image{
+      height: 500px;
+      width: 500px;
+      object-fit: cover;
+      img{
+        height: 500px;
+        width: 500px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .col-2{
+
+  }
+}

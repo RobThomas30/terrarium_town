@@ -1,44 +1,84 @@
-// Place all the styles related to the listings controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-
-
-.container{
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
+.terrarium{
+  display:  flex;
+  justify-content: center;
+  background-color: #90ee90;
+  .icon{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 40%;
+  }
 }
 
-.listing{
-  width: 50%;
-  display: grid;
-  // grid-template-rows: 1fr 1fr 1fr;
-  // grid-template-columns: 1fr 1fr 1fr;
-  .listing-title{
-  
-  }
-  .sale{
-   
-  }
-  .listing-description{
-  
-  }
-  .listing-size{
- 
-  }
-  .listing-image{
+.list-holder{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
-    img{
-      height: 200px;
-      width: 200px;
-      object-fit: cover;
+  .list{
+    background-color: #00800099;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    
+    .each{
+      width: 98%;
+      margin: 6px 0px 3px 0px;
+      display: grid;
+      grid-template-columns: 1fr 2fr 3fr;
+      background-color: #90ee90;
+      border-radius: 5px;
+
+      .col-1{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        padding: 10px;
+        .listing-image{
+          img{
+            border-radius: 5px;
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .col-2{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        padding-left: 25px;
+        .listing-title{
+        }
+        .sale{
+
+        }
+        .listing-size{
+          
+        }
+        .listing-user{
+          
+        }
+      }
+      
+      .col-3{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        padding: 0px 10px 0px 25px;
+        .listing-description{
+              
+        }
+        .show-button{
+
+        }
+      }
     }
   }
-  .listing-user{
-  
-  }
-  .show-button{
-
-  }
 }
-

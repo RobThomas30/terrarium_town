@@ -66,3 +66,5 @@ gem "faker", "~> 2.11"
 gem "bootstrap", "~> 4.4"
 
 gem "ransack", "~> 2.3"
+
+gem "stripe", "~> 5.22"

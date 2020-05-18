@@ -1,5 +1,15 @@
 @import "listings/listings";
+@import "listings/show";
 
-.container{
+body{
+  width: 100%;
   margin: 0 auto;
+  .container{
+    background-image: url("/images/6.jpg");
+    // background-size: cover;
+    width: 100%;
+    nav{
+      background-color: lightsteelblue;
+    }
+  }
 }
