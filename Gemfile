@@ -62,3 +62,7 @@ gem "aws-sdk-s3", "~> 1.64"
 gem "table_print", "~> 1.5"
 
 gem "faker", "~> 2.11"
+
+gem "bootstrap", "~> 4.4"
+
+gem "ransack", "~> 2.3"

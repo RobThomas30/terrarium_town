@@ -2,5 +2,21 @@
   <%= render 'shared/nav' %> 
  
   <h1>Terrarium-Town</h1>
+
+  <div class='filter-search'>
+    <div class='search'>
+      <%= search_form_for @q do |f| %>
+        <%= f.search_field :title_cont %>
+        <%= f.submit %>
+      <% end %> 
+    </div>
+
+    <div class='filter'>
+      Sort by:
+      <%= sort_link(@q, :title, 'Title', default_order: :desc) %>
+      <%= sort_link(@q, :price, 'Price', default_order: :desc) %>
+      <%= sort_link(@q, :size, 'Size', default_order: :desc) %>
+    </div>
+  </div>
   <%= render 'shared/listings' %>
 </div>

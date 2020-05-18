@@ -51,7 +51,7 @@ puts "🌱"
 User.find(2).listings.create(
   title: "Octagon",
   price: 900,
-  description: "Very large octaganle terrarium with built in lighting structure.",
+  description: "Very large octagonal terrarium with built in lighting structure.",
   sale_type: 1,
   size: 5,
   image: '/images/xlarge1.jpg'

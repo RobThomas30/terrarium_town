@@ -2,5 +2,6 @@
   <%= render 'shared/nav' %> 
  
   <h1><%= @user.username %>'s Terrarium Town</h1>
+  <%= link_to "Edit Username", profile_path(id: current_user.id) %>
   <%= render 'shared/listings' %>
 </div>

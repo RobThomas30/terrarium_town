@@ -1,16 +1,13 @@
 <%= render 'shared/nav' %> 
 
-<h1>Edit your profile </h1>
+<h1>Edit your username </h1>
 
 <%= form_with scope: @user, url: profile_path, local: true, method: "patch" do |form| %>
   
   <div>
-    <%= form.label :username %>
+    <p>Old Username: <%= current_user.profile.username %></p>
+    <%= form.label 'New Username' %>
     <%= form.text_field :username %>
-  </div>
-  <div>
-    <%= form.label :location %>
-    <%= form.text_field :location %>
   </div>
 
   <div>

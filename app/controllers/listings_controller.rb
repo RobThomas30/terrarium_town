@@ -8,7 +8,8 @@ class ListingsController < ApplicationController
   end
 
   def index
-    @listings = Listing.all
+    @q = Listing.ransack(params[:q])
+    @listings = @q.result(distinct:true)
   end
 
   def show
