@@ -29,4 +29,8 @@ module ListingsHelper
       'Free'
     end
   end
+
+  def created_at_to_date(created_at)
+    
+  end
 end

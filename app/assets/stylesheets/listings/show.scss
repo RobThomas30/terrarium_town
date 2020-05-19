@@ -1,24 +1,50 @@
+.bar{
+  width: 100%;
+  height: 5px;
+  background-color: #00800099;
+}
 
 .show-container{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  
-  .col-1{
+  justify-content: center;
+  .back-box{
+    width: 70%;
+    background-color: #00800099;
+    padding: 0px 5px 5px 5px;
+    .show-listing{
+      display: flex;
+      background-color: #90ee90;
 
-    .show-image{
-      height: 500px;
-      width: 500px;
-      object-fit: cover;
-      img{
-        height: 500px;
-        width: 500px;
-        object-fit: cover;
+      .col-1{
+
+        .show-image{
+          height: 500px;
+          width: 500px;
+          object-fit: cover;
+          padding: 5px;
+          
+          img{
+            height: 500px;
+            width: 500px;
+            object-fit: cover;
+            border-radius: 5px;
+          }
+        }
+      }
+
+      .col-2{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin: 0px 20px 0px 20px;
+        .show-edit-delete{
+          display: flex;
+          justify-content: space-between;
+        }
       }
     }
   }
-
-  .col-2{
-
-  }
 }
+

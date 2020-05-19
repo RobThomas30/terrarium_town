@@ -1,12 +1,16 @@
-.terrarium{
-  display:  flex;
-  justify-content: center;
-  background-color: #90ee90;
-  .icon{
-    height: 100px;
-    width: 100px;
-    object-fit: cover;
-    border-radius: 40%;
+
+
+.filter-search{
+  width: 100%;
+  background-color: #00800099;
+  padding-bottom: 6px;
+  .search-holder{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #90ee90;
+    padding-bottom: 5px;
   }
 }
 
@@ -25,7 +29,7 @@
     
     .each{
       width: 98%;
-      margin: 6px 0px 3px 0px;
+      margin-bottom: 5px;
       display: grid;
       grid-template-columns: 1fr 2fr 3fr;
       background-color: #90ee90;

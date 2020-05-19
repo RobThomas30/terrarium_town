@@ -5,11 +5,34 @@ body{
   width: 100%;
   margin: 0 auto;
   .container{
-    background-image: url("/images/6.jpg");
-    // background-size: cover;
+    background-image: url("/images/1.jpg");
+    background-size: cover;
     width: 100%;
+    min-height: 100vh;
     nav{
-      background-color: lightsteelblue;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background-color: #90ee90;
+      .nav-holder{
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .terrarium{
+          display:  flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #90ee90;
+          .icon{
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+            border-radius: 40%;
+            margin: 5px;
+          }
+        }
+      }
     }
   }
 }
