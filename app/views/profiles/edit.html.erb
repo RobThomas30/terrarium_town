@@ -1,17 +1,23 @@
-<%= render 'shared/nav' %> 
+<div class='container'>
+  <%= render 'shared/nav' %> 
+  <div class='bar'></div>
 
-<h1>Edit your username </h1>
+  <div class='center'>
+    <div class='holder'>
+      <div class='box'>
 
-<%= form_with scope: @user, url: profile_path, local: true, method: "patch" do |form| %>
-  
-  <div>
-    <p>Old Username: <%= current_user.profile.username %></p>
-    <%= form.label 'New Username' %>
-    <%= form.text_field :username %>
+        <h1>Edit your username </h1>
+
+        <%= form_with scope: @user, url: profile_path, local: true, method: "patch" do |form| %>
+
+        <p>Old Username: <%= current_user.profile.username %></p>
+        <%= form.label 'New Username' %>
+        <%= form.text_field :username %>
+
+        <%= form.submit %>
+        <% end %>
+ 
+      </div>
+    </div>
   </div>
-
-  <div>
-    <%= form.submit %>
-  </div>  
-
-<% end %>
+</div>

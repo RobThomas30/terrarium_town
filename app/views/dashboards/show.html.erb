@@ -1,14 +1,13 @@
 <div class='container'>
   <%= render 'shared/nav' %> 
-  
   <div class='bar'></div>
-
+  
   <div class='user-holder'>
     <div class='user-box'>
       <div class='user'>
         <h1><%= @user.username %>'s Terrarium's</h1>
         <% if current_user.profile.username == @user.username  %>
-          <%= link_to "Username", profile_path(id: current_user.id) %>
+          <%= link_to "Username",  edit_profile_path(current_user) %>
         <% end %>
       </div>
     </div>

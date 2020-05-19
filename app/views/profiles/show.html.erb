@@ -2,15 +2,17 @@
 <%= render 'shared/nav' %> 
 
   <div class='bar'></div>
+  
+  <div class='center'>
+    <div class='holder'>
+      <div class='box'>
+        <div>
+          <%= @user.profile.username %> <%= link_to "Change", edit_profile_path(current_user) %>
+        </div>
 
-  <div class='holder'>
-    <div>
-      <%= @user.profile.username %> <%= link_to "Change", edit_profile_path(current_user) %>
-    </div>
-
-    <div>
-      <%= @user.email %>
+        <div>
+          <%= @user.email %>
+        </div>
     </div>
   </div>
-
 </nav>

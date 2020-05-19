@@ -21,7 +21,7 @@ class ListingsController < ApplicationController
   end
 
   def create
-    new_listing = current_user.listings.create(listing_params)
+    new_listing = current_user.listings.new(listing_params)
     if new_listing.save 
       redirect_to new_listing
     else
@@ -55,7 +55,7 @@ class ListingsController < ApplicationController
 
   def listing_params
     if params[:listing][:sale_type] != 1
-      params.require(:listing).permit(:title, :description, :sale_type, :size, :image, :picture) 
+      params.require(:listing).permit(:title, :description, :price, :sale_type, :size, :image, :picture) 
     else
       params.require(:listing).permit(:title, :price, :description, :sale_type, :size, :image, :picture) 
     end
