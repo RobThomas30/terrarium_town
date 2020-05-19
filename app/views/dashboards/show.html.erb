@@ -2,9 +2,13 @@
   <%= render 'shared/nav' %> 
   
   <div class='user-holder'>
-    <div class='user'>
-      <h1><%= @user.username %>'s Terrarium's</h1>
-      <%= link_to "Edit Username", profile_path(id: current_user.id) %>
+    <div class='user-box'>
+      <div class='user'>
+        <h1><%= @user.username %>'s Terrarium's</h1>
+        <% if current_user? == true %>
+          <%= link_to "Edit Username", profile_path(id: current_user.id) %>
+        <% end %>
+      </div>
     </div>
   </div>
 

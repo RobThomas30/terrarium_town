@@ -1,0 +1,19 @@
+.user-holder{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .user-box{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00800099;
+    .user{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #90ee90;
+    }
+  }
+}
