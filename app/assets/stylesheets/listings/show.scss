@@ -39,6 +39,10 @@
         flex-direction: column;
         justify-content: space-evenly;
         margin: 0px 20px 0px 20px;
+        .title-date{
+          display: flex;
+          justify-content: space-between;          
+        }
         .show-edit-delete{
           display: flex;
           justify-content: space-between;

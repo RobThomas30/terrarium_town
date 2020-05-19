@@ -42,11 +42,13 @@
           <p><%= listing.description %></p>
         </div>
 
-        <div class='date'>
-          <%= created_at_to_date(listing.created_at) %>
-        </div>
-        <div class='show-button'>
-          <p><%= link_to "Show", listing_path(listing) %></p>
+        <div class='section'>
+          <div class='date'>
+            <%= created_at_to_date(listing.created_at) %>
+          </div>
+          <div class='show-button'>
+            <p><%= link_to "Show", listing_path(listing) %></p>
+          </div>
         </div>
       </div>
 

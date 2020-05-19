@@ -1,8 +1,4 @@
 module ListingsHelper
-
-  # def price_convert(price)
-  #   # sprintf "%.2f", price.to_f / 100
-  # end
   
   def number_to_size(size)
     case size
@@ -31,6 +27,7 @@ module ListingsHelper
   end
 
   def created_at_to_date(created_at)
-    
+    @date = created_at.strftime("%d/%m/%Y")
+    return @date
   end
 end

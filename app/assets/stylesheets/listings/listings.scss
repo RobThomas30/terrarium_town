@@ -79,8 +79,18 @@
         .listing-description{
               
         }
-        .show-button{
 
+        .section{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0px 35px 0px 0px;
+          .date{
+
+          }
+          .show-button{
+
+          }
         }
       }
     }
