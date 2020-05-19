@@ -16,8 +16,11 @@
 
         <div class='col-1'>
           <div class='show-image'>
-            <img src=<%= @listing.image %>>
-            <%= image_tag @listing.picture if @listing.picture.attached? %>
+            <% if @listing.image %>
+                <img src=<%= @listing.image %>>
+            <% else %>
+              <%= image_tag(@listing.picture) if @listing.picture.attached?%>
+            <% end %>
           </div>
         </div>
 
