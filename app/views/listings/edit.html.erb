@@ -1,32 +1,42 @@
-<%= render 'shared/nav' %> 
+<div class='container'>
+  <%= render 'shared/nav' %> 
+  <div class='bar'></div>
 
-<h1>Edit a Terrarium Listing! </h1>
+  <div class='center'>
+    <div class='holder'>
+      <div class='box'>
 
-<%= form_with scope: @listing, url: listing_path, local: true, method: "patch" do |form| %>
-  
-  <div>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-  <div>
-    <%= form.label :price %>
-    <%= form.number_field :price %>
-  </div>
-  <div>
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-  <div>
-    <%= form.label :sale_type %>
-    <%= form.number_field :sale_type %>
-  </div>
-  <div>
-    <%= form.label :size %>
-    <%= form.number_field :size %>
-  </div>
+        <h1>Edit a Terrarium Listing! </h1>
 
-  <div>
-    <%= form.submit %>
-  </div>  
+        <%= form_with scope: @listing, url: listing_path, local: true, method: "patch" do |form| %>
+          
+          <div>
+            <%= form.label :title %>
+            <%= form.text_field :title %>
+          </div>
+          <div>
+            <%= form.label :price %>
+            <%= form.number_field :price %>
+          </div>
+          <div>
+            <%= form.label :description %>
+            <%= form.text_field :description %>
+          </div>
+          <div>
+            <%= form.label :sale_type %>
+            <%= form.number_field :sale_type %>
+          </div>
+          <div>
+            <%= form.label :size %>
+            <%= form.number_field :size %>
+          </div>
 
-<% end %>
+          <div>
+            <%= form.submit %>
+          </div>  
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

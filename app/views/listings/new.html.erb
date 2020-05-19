@@ -1,55 +1,65 @@
-<%= render 'shared/nav' %> 
+<div class='container'>
+  <%= render 'shared/nav' %> 
+  <div class='bar'></div>
 
-<h1>Create a Terrarium Listing! </h1>
+  <div class='center'>
+    <div class='holder'>
+      <div class='box'>
 
-<%= form_with scope: @listing, url: listings_url, local: true do |form| %>
-  
-  <div>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+        <h1>Create a Terrarium Listing! </h1>
+
+        <%= form_with scope: @listing, url: listings_url, local: true do |form| %>
+          
+          <div>
+            <%= form.label :title %>
+            <%= form.text_field :title %>
+          </div>
+        
+          <div>
+            <%= form.label :description %>
+            <%= form.text_field :description %>
+          </div>
+
+          <div>
+            <%= form.radio_button :sale_type, 1, :checked => true, class: 'sale_type' %> 
+            <%= label :sale_type, 'Sell' %>
+            <%= form.radio_button :sale_type, 2, class: 'sale_type' %>
+            <%= label :sale_type, 'Swap/Trade' %>
+            <%= form.radio_button :sale_type, 3, class: 'sale_type' %>
+            <%= label :sale_type, 'Free' %>
+          </div>
+        
+          <div id='price'>
+              <%= form.label :price %>
+              <%= form.number_field :price %>
+          </div>
+
+          <div>
+            <%= form.radio_button :size, 1, :checked => true %> 
+            <%= label :size, 'X-Small' %>
+            <%= form.radio_button :size, 2 %> 
+            <%= label :size, 'Small' %>
+            <%= form.radio_button :size, 3 %> 
+            <%= label :size, 'Medium' %>
+            <%= form.radio_button :size, 4 %> 
+            <%= label :size, 'Large' %>
+            <%= form.radio_button :size, 5 %> 
+            <%= label :size, 'X-Large' %>
+          </div>
+
+          <div>
+            <%= form.label :picture %> 
+            <%= form.file_field :picture, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+          </div>
+
+          <div>
+            <%= form.submit %>
+          </div>  
+
+        <% end %>
+
+        <%= javascript_pack_tag 'new' %>
+      </div>
+    </div>
   </div>
- 
-  <div>
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div>
-    <%= form.radio_button :sale_type, 1, :checked => true, class: 'sale_type' %> 
-    <%= label :sale_type, 'Sell' %>
-    <%= form.radio_button :sale_type, 2, class: 'sale_type' %>
-    <%= label :sale_type, 'Swap/Trade' %>
-    <%= form.radio_button :sale_type, 3, class: 'sale_type' %>
-    <%= label :sale_type, 'Free' %>
-  </div>
- 
-  <div id='price'>
-      <%= form.label :price %>
-      <%= form.number_field :price %>
-  </div>
-
-  <div>
-    <%= form.radio_button :size, 1, :checked => true %> 
-    <%= label :size, 'X-Small' %>
-    <%= form.radio_button :size, 2 %> 
-    <%= label :size, 'Small' %>
-    <%= form.radio_button :size, 3 %> 
-    <%= label :size, 'Medium' %>
-    <%= form.radio_button :size, 4 %> 
-    <%= label :size, 'Large' %>
-    <%= form.radio_button :size, 5 %> 
-    <%= label :size, 'X-Large' %>
-  </div>
-
-  <div>
-    <%= form.label :picture %> 
-    <%= form.file_field :picture, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>  
-
-<% end %>
-
-<%= javascript_pack_tag 'new' %>
+</div>

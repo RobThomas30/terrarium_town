@@ -3,10 +3,12 @@
 @import "dashboards/show";
 @import "profiles/show";
 @import "profiles/edit";
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
 
 body{
   width: 100%;
   margin: 0 auto;
+  font-family: 'Pangolin', cursive;
   .container{
     background-image: url("/images/1.jpg");
     background-size: cover;
