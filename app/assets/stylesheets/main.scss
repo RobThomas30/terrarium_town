@@ -4,11 +4,14 @@
 @import "profiles/show";
 @import "profiles/edit";
 @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@500&display=swap');
+
 
 body{
   width: 100%;
   margin: 0 auto;
-  font-family: 'Pangolin', cursive;
+  font-family: 'Baloo Chettan 2', cursive;
+  // font-family: 'Pangolin', cursive;
   .container{
     background-image: url("/images/1.jpg");
     background-size: cover;
