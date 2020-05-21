@@ -11,8 +11,12 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    current_user.profile.update(profile_params)
-    redirect_to profile_path
+    @user = current_user.profile
+    if @user.update(profile_params)
+    redirect_to dashboard_path
+    else
+      render 'edit'
+    end
   end
 
   private

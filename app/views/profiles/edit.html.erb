@@ -10,6 +10,19 @@
 
         <%= form_with scope: @user, url: profile_path, local: true, method: "patch" do |form| %>
 
+          <% if @user.errors.any? %>
+            <div class="alert-warning">
+              <h2>
+                <%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:
+              </h2>
+              <ul>
+                <% @user.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
         <p>Old Username: <%= current_user.profile.username %></p>
         <%= form.label 'New Username' %>
         <%= form.text_field :username %>
