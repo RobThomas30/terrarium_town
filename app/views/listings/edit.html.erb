@@ -34,6 +34,7 @@
           </div>
 
           <div>
+            <br>
             <%= form.radio_button :sale_type, 1, :checked => true, class: 'sale_type' %> 
             <%= label :sale_type, 'Sell' %>
             <%= form.radio_button :sale_type, 2, class: 'sale_type' %>
@@ -43,11 +44,13 @@
           </div>
         
           <div id='price'>
-              <%= form.label :price %>
+              <%= form.label 'Sale Price $' %>
               <%= form.number_field :price %>
           </div>
 
           <div>
+            <br>
+            Terrarium Size <br>
             <%= form.radio_button :size, 1, :checked => true %> 
             <%= label :size, 'X-Small' %>
             <%= form.radio_button :size, 2 %> 
@@ -61,6 +64,7 @@
           </div>
 
           <div>
+            <br>
             <%= form.submit %>
           </div>  
 
