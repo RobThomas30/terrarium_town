@@ -1,7 +1,6 @@
 class ListingsController < ApplicationController
-
   load_and_authorize_resource
-  before_action :authenticate_user!, except:[:redirect, :index, :show]
+  before_action :authenticate_user!, except: [:redirect, :index, :show]
 
   def redirect
     # I created this redirect because I want my landing page to be my listings page however I wanted the url to depict that the user was in the listings section
@@ -9,9 +8,9 @@ class ListingsController < ApplicationController
   end
 
   def index
-    # This method creates a SQL request that eager loads  using "with_attached it returns all listing objects from my database instead of using "Listing.all which creats a new request for each object loaded, I've also used the ".inclues" method that creates two more queries: one to get all users and one to get all user profiles, this is necesary due to user and profile being seperate models. 
+    # This method creates a SQL request that eager loads  using "with_attached it returns all listing objects from my database instead of using "Listing.all which creats a new request for each object loaded, I've also used the ".inclues" method that creates two more queries: one to get all users and one to get all user profiles, this is necesary due to user and profile being seperate models.
     @q = Listing.with_attached_picture.includes(user: [:profile]).ransack(params[:q])
-    @listings = @q.result(distinct:true)
+    @listings = @q.result(distinct: true)
   end
 
   def show
@@ -26,7 +25,7 @@ class ListingsController < ApplicationController
   def create
     # Using the params from the form filled out this method will generate a new listing object under the user_id of the current user. If the listing is successfully saved to the database the user will be redirected back to listings.
     @listing = current_user.listings.new(listing_params)
-    if @listing.save 
+    if @listing.save
       redirect_to @listing
     else
       render "new"
@@ -61,9 +60,9 @@ class ListingsController < ApplicationController
 
   def listing_params
     if params[:listing][:sale_type] != 1
-      params.require(:listing).permit(:title, :description, :price, :sale_type, :size, :image, :picture) 
+      params.require(:listing).permit(:title, :description, :price, :sale_type, :size, :image, :picture)
     else
-      params.require(:listing).permit(:title, :price, :description, :sale_type, :size, :image, :picture) 
+      params.require(:listing).permit(:title, :price, :description, :sale_type, :size, :image, :picture)
     end
   end
 end

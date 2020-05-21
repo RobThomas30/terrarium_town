@@ -1,10 +1,9 @@
 module ListingsHelper
-  
   def number_to_size(size)
     case size
     when 1
       'X-Small'
-    when 2 
+    when 2
       'Small'
     when 3
       'Medium'

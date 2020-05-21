@@ -1,11 +1,12 @@
 puts "---------------------------------"
 puts "Making Users who make Terrariums"
 i = 1
-2.times do User.create!( 
-  email: "#{i}@gmail.com", 
-  password: 'password', 
-  password_confirmation: 'password'
-)
+2.times do
+  User.create!(
+    email: "#{i}@gmail.com",
+    password: 'password',
+    password_confirmation: 'password'
+  )
   i += 1
 end
 puts "Users Created 👉🌱👈"

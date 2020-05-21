@@ -1,5 +1,4 @@
 class ProfilesController < ApplicationController
-
   # load_and_authorize_resource
   before_action :authenticate_user!
 
@@ -16,7 +15,7 @@ class ProfilesController < ApplicationController
     scope = nil
     scope = :user if profile_params.has_key?(:user)
     scope = :profile if profile_params.has_key?(:profile)
-    if @user.update(profile_params[scope])      
+    if @user.update(profile_params[scope])
       redirect_to dashboard_path
     else
       render "edit"

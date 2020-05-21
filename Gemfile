@@ -68,3 +68,5 @@ gem "bootstrap", "~> 4.4"
 gem "ransack", "~> 2.3"
 
 gem "stripe", "~> 5.22"
+
+gem "rubocop-rails", "~> 2.5"

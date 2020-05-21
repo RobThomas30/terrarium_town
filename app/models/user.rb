@@ -7,10 +7,11 @@ class User < ApplicationRecord
   has_many :listings
   has_many :favourites
   after_create :create_profile
-  
+
   private
-    def create_profile
-      Profile.create(user: self, username: "#{Faker::Books::Lovecraft.word.capitalize + Faker::Space.galaxy}")
-      puts "created user profile"
-    end
+
+  def create_profile
+    Profile.create(user: self, username: "#{Faker::Books::Lovecraft.word.capitalize + Faker::Space.galaxy}")
+    puts "created user profile"
+  end
 end
