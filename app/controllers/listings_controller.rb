@@ -24,6 +24,7 @@ class ListingsController < ApplicationController
   end
 
   def create
+    # Using the params from the form filled out this method will generate a new listing object under the user_id of the current user. If the listing is successfully saved to the database the user will be redirected back to listings.
     @listing = current_user.listings.new(listing_params)
     if @listing.save 
       redirect_to @listing
@@ -37,6 +38,7 @@ class ListingsController < ApplicationController
   end
 
   def update
+    # This method generates a SQL query using the .find method it locates the listing using the id in the params, it then compares the user id of the listing to the current users id if they don't match it redirects to the listing page. However if they do match .update is called on that listing object and the object is updated using the params from the form. The user is redirected back to the updated listing unless validations have not been met.
     @listing = Listing.find(params[:id])
     if @listing.user_id != current_user.id
       return redirect_to @listing
@@ -50,6 +52,7 @@ class ListingsController < ApplicationController
   end
 
   def destroy
+    # Calls .destroy on a located listing to remove it from the database
     Listing.find(params[:id]).destroy
     redirect_to listings_url
   end
